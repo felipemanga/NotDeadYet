@@ -1,0 +1,1884 @@
+{
+	"metadata": {},
+	"lastBuffer": "Main.java",
+	"files": {
+		"Dog.json": {},
+		"Hello Java.bin": {},
+		"Hello Java.elf": {},
+		"Main.java": {},
+		"Pattern.png": {},
+		"dog.png": {},
+		"dump.bin": {},
+		"firmware.bin": {},
+		"project.json": {}
+	},
+	"javaFlags": {
+		"mainClass": "Main"
+	},
+	"libs": {
+		"Pokitto": [
+			"${appPath}/javacompiler/pokitto/libs/startup.cpp",
+			"${appPath}/javacompiler/pokitto/libs/SystemInit.s"
+		]
+	},
+	"PNGFlags": {
+		"Pokitto": [
+			"palette=${projectPath}/Bubblegum16.pal"
+		]
+	},
+	"SFlags": {
+		"Pokitto": [
+			"-I${appPath}/javacompiler/pokitto/includes",
+			"-I${projectPath}",
+			"-mthumb",
+			"-mcpu=cortex-m0plus",
+			"--defsym=_OSCT=2"
+		],
+		"Comment": []
+	},
+	"CPPFlags": {
+		"DEBUG": [
+			"-Og",
+			"-g3",
+			"-ggdb"
+		],
+		"RELEASE": [
+			"-flto",
+			"-O3",
+			"-fno-unwind-tables",
+			"-fwhole-program"
+		],
+		"Pokitto": [
+			"-D_OSCT=2",
+			"-I${appPath}/javacompiler/pokitto/includes",
+			"-I${projectPath}",
+			"-DPOKITTO",
+			"-fexceptions",
+			"-fno-rtti",
+			"-Wno-pointer-arith",
+			"-c",
+			"-fno-builtin",
+			"-ffunction-sections",
+			"-fdata-sections",
+			"-funsigned-char",
+			"-MMD",
+			"-fno-delete-null-pointer-checks",
+			"-mcpu=cortex-m0plus",
+			"-mthumb",
+			"-Wno-psabi",
+			"-fuse-linker-plugin"
+		],
+		"Desktop": [
+			"-I${appPath}/javacompiler/desktop/includes",
+			"-I${projectPath}",
+			"-DDESKTOP",
+			"-fno-rtti",
+			"-Wno-pointer-arith",
+			"-c",
+			"-fno-exceptions",
+			"-fno-builtin",
+			"-ffunction-sections",
+			"-fdata-sections",
+			"-funsigned-char",
+			"-MMD",
+			"-fno-delete-null-pointer-checks"
+		],
+		"ALL": [
+			"-std=c++14"
+		]
+	},
+	"GDBFlags": {
+		"Pokitto": [
+			"${projectPath}/${projectName}.elf"
+		]
+	},
+	"emuFlags": {
+		"Pokitto": [
+			"${projectPath}/${projectName}.bin"
+		]
+	},
+	"ELF2BINFlags": {
+		"Pokitto": [
+			"-O",
+			"binary",
+			"${projectPath}/${projectName}.elf",
+			"${projectPath}/${projectName}.bin"
+		]
+	},
+	"LDFlags": {
+		"RELEASE": [
+			"-O3",
+			"-flto",
+			"-fno-unwind-tables",
+			"-fuse-linker-plugin"
+		],
+		"DEBUG": [
+			"-Og",
+			"-g3",
+			"-ggdb"
+		],
+		"Pokitto": [
+			"-Wl,-static",
+			"-Wl,--gc-sections",
+			"-Wl,-n",
+			"--specs=nano.specs",
+			"-Wl,--wrap,_sbrk",
+			"-Wl,--wrap,exit",
+			"-Wl,--wrap,malloc",
+			"-mcpu=cortex-m0plus",
+			"-mthumb",
+			"-Wl,--undefined=g_pfnVectors",
+			"-Wl,--undefined=boot",
+			"-Wl,--undefined=__aeabi_idiv",
+			"-T",
+			"${appPath}/javacompiler/pokitto/link.ld",
+			"--output",
+			"${projectPath}/${projectName}.elf",
+			"$objectFiles",
+			"-Wl,--start-group",
+			"-lstdc++",
+			"-lsupc++",
+			"-lm",
+			"-lc",
+			"-lgcc",
+			"-lnosys",
+			"-Wl,--end-group"
+		]
+	},
+	"target": "Pokitto",
+	"pipelines": {
+		"Pokitto": [
+			"compile-java",
+			"compile-cpp",
+			"compile-ld",
+			"compile-bin",
+			"make-img"
+		],
+		"Desktop": [
+			"compile-java",
+			"compile-cpp",
+			"compile-ld",
+			"compile-bin"
+		]
+	},
+	"meta": {
+		"": {},
+		"/Dog.json": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/Main.java": {
+			"sdcard": false
+		},
+		"/Pattern.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/dog.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/project.json": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/Cookie.java": {
+			"sdcard": false
+		},
+		"/Cookie.elf": {
+			"sdcard": false
+		},
+		"/Cookie.bin": {
+			"sdcard": false
+		},
+		"/HW.java": {
+			"sdcard": false
+		},
+		"/PokittoCookie.java": {
+			"sdcard": false
+		},
+		"/math": {},
+		"/math/Vector4.java": {
+			"sdcard": false
+		},
+		"/math/Matrix4.java": {
+			"sdcard": false
+		},
+		"/scripts": {},
+		"/scripts/mesh.js": {
+			"sdcard": false
+		},
+		"/meshes": {},
+		"/meshes/idle.bin": {
+			"sdcard": false
+		},
+		"/meshes/test.obj": {
+			"sdcard": false
+		},
+		"/meshes/idle.obj": {
+			"sdcard": false
+		},
+		"/Node.java": {
+			"sdcard": false
+		},
+		"/11.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/BG.png": {
+			"implements": "",
+			"sdcard": false
+		},
+		"/meshes/Idle.bin": {
+			"sdcard": false
+		},
+		"/meshes/Idle.obj": {
+			"sdcard": false
+		},
+		"/Cookie.bin.1.gif": {
+			"sdcard": false
+		},
+		"/ZombieHeadTamagotchi.gif": {
+			"sdcard": false
+		},
+		"/texture.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/meshes/test.mtl": {
+			"sdcard": false
+		},
+		"/meshes/texture.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/meshes/texture.txt": {
+			"sdcard": false
+		},
+		"/ZombieHeadTamagotchi2.gif": {
+			"sdcard": false
+		},
+		"/meshes/quad.mtl": {
+			"sdcard": false
+		},
+		"/meshes/quad.obj": {
+			"sdcard": false
+		},
+		"/meshes/quad.bin": {
+			"sdcard": false
+		},
+		"/ZombieHeadTamagotchi3.gif": {
+			"sdcard": false
+		},
+		"/Head.java": {
+			"sdcard": false
+		},
+		"/Cookie.bin.2.gif": {
+			"sdcard": false
+		},
+		"/ZombieHeadTamagotchi4.gif": {
+			"sdcard": false
+		},
+		"/sounds": {
+			"sdcard": false
+		},
+		"/sounds/Ah.wav": {
+			"sdcard": false
+		},
+		"/sounds/Hua.wav": {
+			"sdcard": false
+		},
+		"/sounds/Huh.wav": {
+			"sdcard": false
+		},
+		"/sounds/Thud.wav": {
+			"sdcard": false
+		},
+		"/sounds/Thud-old1.wav": {
+			"sdcard": false
+		},
+		"/scripts/deploy.sh": {
+			"sdcard": false
+		},
+		"/scripts/deploy.js": {
+			"sdcard": false
+		},
+		"/meshes/texture.aseprite": {
+			"sdcard": false
+		},
+		"/food": {
+			"sdcard": false
+		},
+		"/images": {},
+		"/food/beans.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/burger.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/burrito.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/cheesecake.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/chocolate bar.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/chocolate cake.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/cookies.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/coxinha.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/croissant.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/donut.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/egg.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/foodies_sheet.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/hotdog.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/ice cream.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/lamen.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/lasagna.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/lava cake.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/nacho.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/nigiri.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/onirigi.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/pizza.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/popsicle.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/pumpkin pie.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/strawberry cake.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/food/sushi.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/BG.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/Balloons.json": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/Balloons.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/ImanorBalloon.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/Ask.java": {
+			"sdcard": false
+		},
+		"/Bacon.bin": {
+			"sdcard": false
+		},
+		"/meshes/texture.json": {
+			"implements": "",
+			"sdcard": false
+		},
+		"/images/Particles.aseprite": {
+			"sdcard": false
+		},
+		"/images/Particles.json": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/Particles.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/Cookie.bin.1.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/images/cutscene.aseprite": {
+			"sdcard": false
+		},
+		"/meshes/SpaceCraft1.obj": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft1.mtl": {
+			"sdcard": false
+		},
+		"/Armada.elf": {
+			"sdcard": false
+		},
+		"/Armada.bin": {
+			"sdcard": false
+		},
+		"/meshes/SpaceCraft1.bin": {
+			"sdcard": false
+		},
+		"/scripts/mesh-multimat.js": {
+			"sdcard": false
+		},
+		"/Armada.bin.1.gif": {
+			"sdcard": false
+		},
+		"/Terrain.java": {
+			"sdcard": false
+		},
+		"/images/BG_grass.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/images/30.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/images/1.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/images/sky-2.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/Entry.gif": {
+			"sdcard": false
+		},
+		"/Armada.bin.1.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/Armada.bin.2.gif": {
+			"sdcard": false
+		},
+		"/TerrainTest.gif": {
+			"sdcard": false
+		},
+		"/Ship.java": {
+			"sdcard": false
+		},
+		"/images/HUD.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/entry.bin": {
+			"sdcard": false
+		},
+		"/Particles.java": {
+			"sdcard": false
+		},
+		"/meshes/.fr-zkDlXt": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft5.obj": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft5.mtl": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft4.obj": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft4.mtl": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft3.obj": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft3.mtl": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft2.obj": {
+			"sdcard": false
+		},
+		"/meshes/spaceCraft2.mtl": {
+			"sdcard": false
+		},
+		"/meshes/robot.obj": {
+			"sdcard": false
+		},
+		"/meshes/robot.mtl": {
+			"sdcard": false
+		},
+		"/meshes/portal.obj": {
+			"sdcard": false
+		},
+		"/meshes/portal.mtl": {
+			"sdcard": false
+		},
+		"/meshes/astronaut.obj": {
+			"sdcard": false
+		},
+		"/meshes/astronaut.mtl": {
+			"sdcard": false
+		},
+		"/meshes/alien.obj": {
+			"sdcard": false
+		},
+		"/meshes/alien.mtl": {
+			"sdcard": false
+		},
+		"/meshes/Alien.bin": {
+			"sdcard": false
+		},
+		"/meshes/Portal.bin": {
+			"sdcard": false
+		},
+		"/meshes/Astronaut.bin": {
+			"sdcard": false
+		},
+		"/meshes/Quad.bin": {
+			"sdcard": false
+		},
+		"/meshes/SpaceCraft2.bin": {
+			"sdcard": false
+		},
+		"/meshes/Robot.bin": {
+			"sdcard": false
+		},
+		"/meshes/SpaceCraft3.bin": {
+			"sdcard": false
+		},
+		"/meshes/SpaceCraft4.bin": {
+			"sdcard": false
+		},
+		"/meshes/SpaceCraft5.bin": {
+			"sdcard": false
+		},
+		"/meshes/.fr-MVXHnu": {
+			"sdcard": false
+		},
+		"/meshes/pipeStand.obj": {
+			"sdcard": false
+		},
+		"/meshes/pipeStand.mtl": {
+			"sdcard": false
+		},
+		"/meshes/PipeStand.bin": {
+			"sdcard": false
+		},
+		"/meshes/.fr-HPObQg": {
+			"sdcard": false
+		},
+		"/meshes/alienBones.obj": {
+			"sdcard": false
+		},
+		"/meshes/alienBones.mtl": {
+			"sdcard": false
+		},
+		"/meshes/AlienBones.bin": {
+			"sdcard": false
+		},
+		"/Node.java~": {
+			"sdcard": false
+		},
+		"/meshes/.fr-QaJeVI": {
+			"sdcard": false
+		},
+		"/meshes/car-van-orange.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-van-orange.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-station-blue.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-station-blue.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-pickup-green.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-pickup-green.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-normal-green.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-normal-green.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-mpv-silver.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-mpv-silver.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-minibus-orange.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-minibus-orange.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-microcargo-silver.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-microcargo-silver.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-micro-blue.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-micro-blue.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-hatchback-red.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-hatchback-red.mtl": {
+			"sdcard": false
+		},
+		"/meshes/car-coupe-orange.obj": {
+			"sdcard": false
+		},
+		"/meshes/car-coupe-orange.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarCoupe.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarCoupe.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarHatchback.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarHatchback.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarMicro.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarMicro.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarMicrocargo.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarMicrocargo.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarMinibus.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarMinibus.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarMpv.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarMpv.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarNormal.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarNormal.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarPickup.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarPickup.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarStation.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarStation.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarVan.mtl": {
+			"sdcard": false
+		},
+		"/meshes/CarVan.obj": {
+			"sdcard": false
+		},
+		"/meshes/.fr-SGn9T4": {
+			"sdcard": false
+		},
+		"/meshes/CarCoupe.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarHatchback.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarMicro.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarMicrocargo.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarMinibus.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarMpv.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarNormal.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarPickup.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarStation.bin": {
+			"sdcard": false
+		},
+		"/meshes/CarVan.bin": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_017.mtl": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_017.obj": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_019.mtl": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_019.obj": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_027.mtl": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_027.obj": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_028.mtl": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_028.obj": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_029.mtl": {
+			"sdcard": false
+		},
+		"/meshes/watercraftPack_029.obj": {
+			"sdcard": false
+		},
+		"/meshes/CarCoupe.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarHatchback.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarMicro.bin.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarMicro.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarMicrocargo.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarMinibus.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarMpv.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarNormal.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarPickup.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarStation.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/CarVan.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/WatercraftPack_017.bin": {
+			"sdcard": false
+		},
+		"/meshes/WatercraftPack_019.bin": {
+			"sdcard": false
+		},
+		"/meshes/WatercraftPack_027.bin": {
+			"sdcard": false
+		},
+		"/meshes/WatercraftPack_028.bin": {
+			"sdcard": false
+		},
+		"/meshes/WatercraftPack_029.bin": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_051.mtl": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_051.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_055.mtl": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_055.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_067.mtl": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_067.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_066.mtl": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_066.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_075.mtl": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_075.obj": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_051.bin": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_055.bin": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_066.bin": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_067.bin": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_075.bin": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_114.mtl": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_114.obj": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_114.bin": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_084.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_084.mtl": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_071.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_071.mtl": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_074.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_074.mtl": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_071.bin": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_074.bin": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_084.bin": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_068.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_068.mtl": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_068.bin": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_061.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_061.mtl": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_061.bin": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_150.obj": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_150.mtl": {
+			"sdcard": false
+		},
+		"/meshes/plant.mtl": {
+			"sdcard": false
+		},
+		"/meshes/plant.obj": {
+			"sdcard": false
+		},
+		"/meshes/NaturePack_150.bin": {
+			"sdcard": false
+		},
+		"/meshes/Plant.bin": {
+			"sdcard": false
+		},
+		"/meshes/Jet.blend": {
+			"sdcard": false
+		},
+		"/meshes/Jet.obj": {
+			"sdcard": false
+		},
+		"/meshes/Jet.mtl": {
+			"sdcard": false
+		},
+		"/meshes/Jet.bin": {
+			"sdcard": false
+		},
+		"/meshes/Jet.blend1": {
+			"sdcard": false
+		},
+		"/meshes/Jet.blend@": {
+			"sdcard": false
+		},
+		"/meshes/blender": {
+			"sdcard": false
+		},
+		"/.git": {
+			"sdcard": false
+		},
+		"/meshes/blender/CarHatchback.blend": {
+			"sdcard": false
+		},
+		"/meshes/blender/CarHatchback.blend1": {
+			"sdcard": false
+		},
+		"/meshes/blender/Jet.blend": {
+			"sdcard": false
+		},
+		"/meshes/blender/Jet.blend1": {
+			"sdcard": false
+		},
+		"/meshes/blender/Jet.blend@": {
+			"sdcard": false
+		},
+		"/meshes/blender/Bullet.blend": {
+			"sdcard": false
+		},
+		"/meshes/Bullet.obj": {
+			"sdcard": false
+		},
+		"/meshes/Bullet.mtl": {
+			"sdcard": false
+		},
+		"/meshes/Bullet.bin": {
+			"sdcard": false
+		},
+		"/Bullet.java": {
+			"sdcard": false
+		},
+		"/meshes/blender/Bullet.blend@": {
+			"sdcard": false
+		},
+		"/meshes/blender/Bullet.blend1": {
+			"sdcard": false
+		},
+		"/meshes/Bullet.mtl~": {
+			"sdcard": false
+		},
+		"/meshes/naturePack_061.obj.ignore": {
+			"sdcard": false
+		},
+		"/meshes/blender/Palm.blend@": {
+			"sdcard": false
+		},
+		"/meshes/blender/Palm.blend": {
+			"sdcard": false
+		},
+		"/meshes/blender/Pine.blend": {
+			"sdcard": false
+		},
+		"/meshes/blender/Shroom.blend": {
+			"sdcard": false
+		},
+		"/meshes/blender/ChargePoint.blend": {
+			"sdcard": false
+		},
+		"/meshes/blender/ChargePoint.blend@": {
+			"sdcard": false
+		},
+		"/meshes/blender/ChargePoint.blend1": {
+			"sdcard": false
+		},
+		"/meshes/blender/PaddleBoat.blend": {
+			"sdcard": false
+		},
+		"/meshes/blender/PaddleBoat.blend1": {
+			"sdcard": false
+		},
+		"/meshes/blender/PaddleBoat.blend@": {
+			"sdcard": false
+		},
+		"/meshes/blender/Jet2.blend": {
+			"sdcard": false
+		},
+		"/meshes/Jet2.obj": {
+			"sdcard": false
+		},
+		"/meshes/Jet2.mtl": {
+			"sdcard": false
+		},
+		"/meshes/Jet2.bin": {
+			"sdcard": false
+		},
+		"/scripts/xesh-multimat.js": {
+			"sdcard": false
+		},
+		"/meshes/blender/Jet2.blend1": {
+			"sdcard": false
+		},
+		"/meshes/blender/Jet2.blend@": {
+			"sdcard": false
+		},
+		"/meshes/blender/CarHatchback.blend@": {
+			"sdcard": false
+		},
+		"/cutscenes": {
+			"sdcard": false
+		},
+		"/scripts/cutscene.js": {
+			"sdcard": false
+		},
+		"/CS1.bin": {
+			"sdcard": false
+		},
+		"/Cutscene.java": {
+			"sdcard": false
+		},
+		"/ZA1.bin": {
+			"sdcard": false
+		},
+		"/cutscenes/CS1-1.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/CS1-2.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/CS1-3.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/CS1-4.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/CS1.aseprite": {
+			"sdcard": false
+		},
+		"/cutscenes/ZA1-1.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA1-2.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA1-3.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA1-5.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA1-4.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA1-6.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA1.aseprite": {
+			"sdcard": false
+		},
+		"/Traveler.java": {
+			"sdcard": false
+		},
+		"/cutscenes/ZA2-1.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA2-2.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA2-3.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA2-4.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA2-5.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA2-6.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/ZA2.aseprite": {
+			"sdcard": false
+		},
+		"/ZA2.bin": {
+			"sdcard": false
+		},
+		"/Armada.bin.2.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/Heads.aseprite": {
+			"sdcard": false
+		},
+		"/cutscenes/Av1.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/Av2.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/Av3.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/Av4.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/Av5.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvB1.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvB2.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvB3.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvB4.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvB5.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvC1.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvC2.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvC3.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvC4.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvC5.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvD1.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvD2.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvD3.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvD4.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvD5.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvE1.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvE2.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvE3.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvE5.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/AvE4.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/Av-1.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-2.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-3.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-4.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-5.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-6.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-7.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-8.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-9.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-10.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-11.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-12.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-13.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-14.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-15.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-16.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-17.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-18.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-19.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-20.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-21.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-22.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-23.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-24.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-25.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/Av.bin": {
+			"sdcard": false
+		},
+		"/cutscenes/Av-26.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-27.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-28.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-29.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-30.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-31.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-32.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-33.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-34.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/Av-35.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/Stranded.java": {
+			"sdcard": false
+		},
+		"/Stranded.java~": {
+			"sdcard": false
+		},
+		"/Enemy.java": {
+			"sdcard": false
+		},
+		"/Enemy.java~": {
+			"sdcard": false
+		},
+		"/PhysicsNode.java": {
+			"sdcard": false
+		},
+		"/#Enemy.java#": {
+			"sdcard": false
+		},
+		"/Player.java": {
+			"sdcard": false
+		},
+		"/#Player.java#": {
+			"sdcard": false
+		},
+		"/Player.java~": {
+			"sdcard": false
+		},
+		"/#Ship.java#": {
+			"sdcard": false
+		},
+		"/#Stranded.java#": {
+			"sdcard": false
+		},
+		"/#Bullet.java#": {
+			"sdcard": false
+		},
+		"/sounds/Explosion18.wav": {
+			"sdcard": false
+		},
+		"/sounds/Explosion.wav": {
+			"sdcard": false
+		},
+		"/sounds/Laser_Shoot.wav": {
+			"sdcard": false
+		},
+		"/sounds/Shoot.wav": {
+			"sdcard": false
+		},
+		"/Bubblegum16.pal": {
+			"sdcard": false
+		},
+		"/.goutputstream-Z87B9Z": {
+			"sdcard": false
+		},
+		"/images/Bar.aseprite": {
+			"sdcard": false
+		},
+		"/images/Bar.json": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/Bar.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/Bar2.aseprite": {
+			"sdcard": false
+		},
+		"/images/Bar2.json": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/Bar2.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/HUD.java": {
+			"sdcard": false
+		},
+		"/sounds/Pickup_Coin13.wav": {
+			"sdcard": false
+		},
+		"/sounds/Pickup.wav": {
+			"sdcard": false
+		},
+		"/file.txt": {
+			"sdcard": false
+		},
+		"/sounds/Jump__003.wav": {
+			"sdcard": false
+		},
+		"/sounds/Recharge.wav": {
+			"sdcard": false
+		},
+		"/images/Top.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/rubbish": {},
+		"/rubbish/AttackCutscene.java": {
+			"sdcard": false
+		},
+		"/rubbish/Party.java": {
+			"sdcard": false
+		},
+		"/IntroCutscene.java": {
+			"sdcard": false
+		},
+		"/Armada.bin.3.png": {
+			"implements": "",
+			"sdcard": false
+		},
+		"/Armada.bin.4.gif": {
+			"sdcard": false
+		},
+		"/images/Beam.aseprite": {
+			"sdcard": false
+		},
+		"/images/Beam.json": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/images/Beam.png": {
+			"implements": "",
+			"sdcard": false,
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/Armada.asm": {
+			"sdcard": false
+		},
+		"/math/#Matrix4.java#": {
+			"sdcard": false
+		},
+		"/Pause.java": {
+			"sdcard": false
+		},
+		"/NotDeadYet.bin": {
+			"sdcard": false
+		},
+		"/cutscenes/Title.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/Armada.bin.3.gif": {
+			"sdcard": false
+		},
+		"/Armada.bin.5.gif": {
+			"sdcard": false
+		},
+		"/Armada.bin.6.gif": {
+			"sdcard": false
+		},
+		"/ezgif-6-1ecf68cd4d6a.gif": {
+			"sdcard": false
+		},
+		"/EndLevel.java": {
+			"sdcard": false
+		},
+		"/cutscenes/CS1-5.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/CS1-6.png": {
+			"sdcard": false,
+			"implements": ""
+		},
+		"/cutscenes/CS2-1.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/cutscenes/CS3-1.png": {
+			"sdcard": false,
+			"implements": "",
+			"palette": "[default]",
+			"palOffset": 0
+		},
+		"/CS2.bin": {
+			"sdcard": false
+		},
+		"/CS3.bin": {
+			"sdcard": false
+		},
+		"/Title.png.bin": {
+			"sdcard": false
+		},
+		"/GameOver.java": {
+			"sdcard": false
+		},
+		"/NDY.gif": {
+			"sdcard": false
+		},
+		"/windows": {
+			"sdcard": false
+		},
+		"/linux": {
+			"sdcard": false
+		},
+		"/MacOS": {
+			"sdcard": false
+		},
+		"/MacOS/NotDeadYet": {
+			"sdcard": false
+		},
+		"/MacOS/NotDeadYet-MacOSX.zip": {
+			"sdcard": false
+		},
+		"/MacOS/file.bin": {
+			"sdcard": false
+		},
+		"/linux/NotDeadYet-Linux.zip": {
+			"sdcard": false
+		},
+		"/linux/PokittoEmu": {
+			"sdcard": false
+		},
+		"/linux/file.bin": {
+			"sdcard": false
+		},
+		"/windows/NotDeadYet-Windows.zip": {
+			"sdcard": false
+		},
+		"/windows/NotDeadYet.exe": {
+			"sdcard": false
+		},
+		"/windows/SDL2.dll": {
+			"sdcard": false
+		},
+		"/windows/SDL2_image.dll": {
+			"sdcard": false
+		},
+		"/windows/SDL2_net.dll": {
+			"sdcard": false
+		},
+		"/windows/file.bin": {
+			"sdcard": false
+		},
+		"/windows/libjpeg-9.dll": {
+			"sdcard": false
+		},
+		"/windows/libpng16-16.dll": {
+			"sdcard": false
+		},
+		"/windows/libtiff-5.dll": {
+			"sdcard": false
+		},
+		"/windows/libwebp-7.dll": {
+			"sdcard": false
+		},
+		"/windows/zlib1.dll": {
+			"sdcard": false
+		},
+		"/#Main.java#": {
+			"sdcard": false
+		},
+		"/NotDeadYet-V1.0.1.bin": {
+			"sdcard": false
+		}
+	}
+}
